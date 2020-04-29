@@ -141,10 +141,526 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  /// This `R.image` struct is generated, and contains static references to 52 images.
+  struct image {
+    /// Image `Icon-72`.
+    static let icon72 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon-72")
+    /// Image `Icon-Small-50`.
+    static let iconSmall50 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon-Small-50")
+    /// Image `Icon-Small`.
+    static let iconSmall = Rswift.ImageResource(bundle: R.hostingBundle, name: "Icon-Small")
+    /// Image `THTabBarAudio_selected`.
+    static let thTabBarAudio_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "THTabBarAudio_selected")
+    /// Image `THTabBarAudio`.
+    static let thTabBarAudio = Rswift.ImageResource(bundle: R.hostingBundle, name: "THTabBarAudio")
+    /// Image `THTabBarVideo_selected`.
+    static let thTabBarVideo_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "THTabBarVideo_selected")
+    /// Image `THTabBarVideo`.
+    static let thTabBarVideo = Rswift.ImageResource(bundle: R.hostingBundle, name: "THTabBarVideo")
+    /// Image `app_black_background`.
+    static let app_black_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_black_background")
+    /// Image `app_cell_background_selected`.
+    static let app_cell_background_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_cell_background_selected")
+    /// Image `app_cell_background`.
+    static let app_cell_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_cell_background")
+    /// Image `app_gray_background`.
+    static let app_gray_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_gray_background")
+    /// Image `app_navbar_background`.
+    static let app_navbar_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_navbar_background")
+    /// Image `app_settings_icon`.
+    static let app_settings_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_settings_icon")
+    /// Image `app_slate_background`.
+    static let app_slate_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_slate_background")
+    /// Image `app_stone_background`.
+    static let app_stone_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_stone_background")
+    /// Image `app_table_cell`.
+    static let app_table_cell = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_table_cell")
+    /// Image `app_white_background`.
+    static let app_white_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "app_white_background")
+    /// Image `avf_logo_large`.
+    static let avf_logo_large = Rswift.ImageResource(bundle: R.hostingBundle, name: "avf_logo_large")
+    /// Image `avf_logo`.
+    static let avf_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "avf_logo")
+    /// Image `dark_bar_button_background`.
+    static let dark_bar_button_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_bar_button_background")
+    /// Image `dark_button_background`.
+    static let dark_button_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "dark_button_background")
+    /// Image `export_progress_img`.
+    static let export_progress_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "export_progress_img")
+    /// Image `export_progress_track_img`.
+    static let export_progress_track_img = Rswift.ImageResource(bundle: R.hostingBundle, name: "export_progress_track_img")
+    /// Image `light_bar_button_background`.
+    static let light_bar_button_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "light_bar_button_background")
+    /// Image `mp_add_button`.
+    static let mp_add_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "mp_add_button")
+    /// Image `mp_play_button`.
+    static let mp_play_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "mp_play_button")
+    /// Image `mp_stop_button`.
+    static let mp_stop_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "mp_stop_button")
+    /// Image `mp_tb_selection`.
+    static let mp_tb_selection = Rswift.ImageResource(bundle: R.hostingBundle, name: "mp_tb_selection")
+    /// Image `pv_play_button`.
+    static let pv_play_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "pv_play_button")
+    /// Image `pv_play_icon`.
+    static let pv_play_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "pv_play_icon")
+    /// Image `pv_stop_icon`.
+    static let pv_stop_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "pv_stop_icon")
+    /// Image `renio`.
+    static let renio = Rswift.ImageResource(bundle: R.hostingBundle, name: "renio")
+    /// Image `spark`.
+    static let spark = Rswift.ImageResource(bundle: R.hostingBundle, name: "spark")
+    /// Image `table_view_header_background`.
+    static let table_view_header_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "table_view_header_background")
+    /// Image `tapharmonic_logo`.
+    static let tapharmonic_logo = Rswift.ImageResource(bundle: R.hostingBundle, name: "tapharmonic_logo")
+    /// Image `tb_background`.
+    static let tb_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "tb_background")
+    /// Image `th_selector_ui_highlighted`.
+    static let th_selector_ui_highlighted = Rswift.ImageResource(bundle: R.hostingBundle, name: "th_selector_ui_highlighted")
+    /// Image `th_selector_ui_selected`.
+    static let th_selector_ui_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "th_selector_ui_selected")
+    /// Image `th_trimmer_ui_highlighted`.
+    static let th_trimmer_ui_highlighted = Rswift.ImageResource(bundle: R.hostingBundle, name: "th_trimmer_ui_highlighted")
+    /// Image `th_trimmer_ui_selected`.
+    static let th_trimmer_ui_selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "th_trimmer_ui_selected")
+    /// Image `tp_add_media_icon`.
+    static let tp_add_media_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_add_media_icon")
+    /// Image `tp_ff_icon`.
+    static let tp_ff_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_ff_icon")
+    /// Image `tp_play_icon`.
+    static let tp_play_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_play_icon")
+    /// Image `tp_rewind_icon`.
+    static let tp_rewind_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_rewind_icon")
+    /// Image `tp_round_button_small`.
+    static let tp_round_button_small = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_round_button_small")
+    /// Image `tp_round_button`.
+    static let tp_round_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_round_button")
+    /// Image `tp_square_button`.
+    static let tp_square_button = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_square_button")
+    /// Image `tp_stop_icon`.
+    static let tp_stop_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_stop_icon")
+    /// Image `tp_volume_button_icon`.
+    static let tp_volume_button_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "tp_volume_button_icon")
+    /// Image `trans_btn_bg_none`.
+    static let trans_btn_bg_none = Rswift.ImageResource(bundle: R.hostingBundle, name: "trans_btn_bg_none")
+    /// Image `trans_btn_bg_push`.
+    static let trans_btn_bg_push = Rswift.ImageResource(bundle: R.hostingBundle, name: "trans_btn_bg_push")
+    /// Image `trans_btn_bg_xfade`.
+    static let trans_btn_bg_xfade = Rswift.ImageResource(bundle: R.hostingBundle, name: "trans_btn_bg_xfade")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon-72", bundle: ..., traitCollection: ...)`
+    static func icon72(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon72, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon-Small", bundle: ..., traitCollection: ...)`
+    static func iconSmall(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconSmall, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Icon-Small-50", bundle: ..., traitCollection: ...)`
+    static func iconSmall50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.iconSmall50, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "THTabBarAudio", bundle: ..., traitCollection: ...)`
+    static func thTabBarAudio(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.thTabBarAudio, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "THTabBarAudio_selected", bundle: ..., traitCollection: ...)`
+    static func thTabBarAudio_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.thTabBarAudio_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "THTabBarVideo", bundle: ..., traitCollection: ...)`
+    static func thTabBarVideo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.thTabBarVideo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "THTabBarVideo_selected", bundle: ..., traitCollection: ...)`
+    static func thTabBarVideo_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.thTabBarVideo_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_black_background", bundle: ..., traitCollection: ...)`
+    static func app_black_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_black_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_cell_background", bundle: ..., traitCollection: ...)`
+    static func app_cell_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_cell_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_cell_background_selected", bundle: ..., traitCollection: ...)`
+    static func app_cell_background_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_cell_background_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_gray_background", bundle: ..., traitCollection: ...)`
+    static func app_gray_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_gray_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_navbar_background", bundle: ..., traitCollection: ...)`
+    static func app_navbar_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_navbar_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_settings_icon", bundle: ..., traitCollection: ...)`
+    static func app_settings_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_settings_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_slate_background", bundle: ..., traitCollection: ...)`
+    static func app_slate_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_slate_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_stone_background", bundle: ..., traitCollection: ...)`
+    static func app_stone_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_stone_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_table_cell", bundle: ..., traitCollection: ...)`
+    static func app_table_cell(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_table_cell, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "app_white_background", bundle: ..., traitCollection: ...)`
+    static func app_white_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.app_white_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "avf_logo", bundle: ..., traitCollection: ...)`
+    static func avf_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.avf_logo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "avf_logo_large", bundle: ..., traitCollection: ...)`
+    static func avf_logo_large(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.avf_logo_large, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dark_bar_button_background", bundle: ..., traitCollection: ...)`
+    static func dark_bar_button_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dark_bar_button_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "dark_button_background", bundle: ..., traitCollection: ...)`
+    static func dark_button_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dark_button_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "export_progress_img", bundle: ..., traitCollection: ...)`
+    static func export_progress_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.export_progress_img, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "export_progress_track_img", bundle: ..., traitCollection: ...)`
+    static func export_progress_track_img(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.export_progress_track_img, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "light_bar_button_background", bundle: ..., traitCollection: ...)`
+    static func light_bar_button_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.light_bar_button_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mp_add_button", bundle: ..., traitCollection: ...)`
+    static func mp_add_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mp_add_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mp_play_button", bundle: ..., traitCollection: ...)`
+    static func mp_play_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mp_play_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mp_stop_button", bundle: ..., traitCollection: ...)`
+    static func mp_stop_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mp_stop_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "mp_tb_selection", bundle: ..., traitCollection: ...)`
+    static func mp_tb_selection(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.mp_tb_selection, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pv_play_button", bundle: ..., traitCollection: ...)`
+    static func pv_play_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pv_play_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pv_play_icon", bundle: ..., traitCollection: ...)`
+    static func pv_play_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pv_play_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "pv_stop_icon", bundle: ..., traitCollection: ...)`
+    static func pv_stop_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.pv_stop_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "renio", bundle: ..., traitCollection: ...)`
+    static func renio(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.renio, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "spark", bundle: ..., traitCollection: ...)`
+    static func spark(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.spark, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "table_view_header_background", bundle: ..., traitCollection: ...)`
+    static func table_view_header_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.table_view_header_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tapharmonic_logo", bundle: ..., traitCollection: ...)`
+    static func tapharmonic_logo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tapharmonic_logo, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tb_background", bundle: ..., traitCollection: ...)`
+    static func tb_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tb_background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "th_selector_ui_highlighted", bundle: ..., traitCollection: ...)`
+    static func th_selector_ui_highlighted(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.th_selector_ui_highlighted, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "th_selector_ui_selected", bundle: ..., traitCollection: ...)`
+    static func th_selector_ui_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.th_selector_ui_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "th_trimmer_ui_highlighted", bundle: ..., traitCollection: ...)`
+    static func th_trimmer_ui_highlighted(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.th_trimmer_ui_highlighted, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "th_trimmer_ui_selected", bundle: ..., traitCollection: ...)`
+    static func th_trimmer_ui_selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.th_trimmer_ui_selected, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_add_media_icon", bundle: ..., traitCollection: ...)`
+    static func tp_add_media_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_add_media_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_ff_icon", bundle: ..., traitCollection: ...)`
+    static func tp_ff_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_ff_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_play_icon", bundle: ..., traitCollection: ...)`
+    static func tp_play_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_play_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_rewind_icon", bundle: ..., traitCollection: ...)`
+    static func tp_rewind_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_rewind_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_round_button", bundle: ..., traitCollection: ...)`
+    static func tp_round_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_round_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_round_button_small", bundle: ..., traitCollection: ...)`
+    static func tp_round_button_small(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_round_button_small, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_square_button", bundle: ..., traitCollection: ...)`
+    static func tp_square_button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_square_button, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_stop_icon", bundle: ..., traitCollection: ...)`
+    static func tp_stop_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_stop_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "tp_volume_button_icon", bundle: ..., traitCollection: ...)`
+    static func tp_volume_button_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.tp_volume_button_icon, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "trans_btn_bg_none", bundle: ..., traitCollection: ...)`
+    static func trans_btn_bg_none(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.trans_btn_bg_none, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "trans_btn_bg_push", bundle: ..., traitCollection: ...)`
+    static func trans_btn_bg_push(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.trans_btn_bg_push, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "trans_btn_bg_xfade", bundle: ..., traitCollection: ...)`
+    static func trans_btn_bg_xfade(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.trans_btn_bg_xfade, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `AudioItemTableViewCell`.
+    static let audioItemTableViewCell = _R.nib._AudioItemTableViewCell()
+    /// Nib `VideoItemTableViewCell`.
+    static let videoItemTableViewCell = _R.nib._VideoItemTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "AudioItemTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.audioItemTableViewCell) instead")
+    static func audioItemTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.audioItemTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "VideoItemTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.videoItemTableViewCell) instead")
+    static func videoItemTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.videoItemTableViewCell)
+    }
+    #endif
+
+    static func audioItemTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AudioItemTableViewCell? {
+      return R.nib.audioItemTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AudioItemTableViewCell
+    }
+
+    static func videoItemTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VideoItemTableViewCell? {
+      return R.nib.videoItemTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VideoItemTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 5 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `AudioItemCollectionViewCell`.
+    static let audioItemCollectionViewCell: Rswift.ReuseIdentifier<AudioItemCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "AudioItemCollectionViewCell")
     /// Reuse identifier `PickerCollectionViewCell`.
     static let pickerCollectionViewCell: Rswift.ReuseIdentifier<PickerCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PickerCollectionViewCell")
+    /// Reuse identifier `TitleItemCollectionViewCell`.
+    static let titleItemCollectionViewCell: Rswift.ReuseIdentifier<TimeLineItemCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TitleItemCollectionViewCell")
+    /// Reuse identifier `TransitionCollectionViewCell`.
+    static let transitionCollectionViewCell: Rswift.ReuseIdentifier<TransitionCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "TransitionCollectionViewCell")
+    /// Reuse identifier `VideoItemCollectionViewCell`.
+    static let videoItemCollectionViewCell: Rswift.ReuseIdentifier<VideoItemCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "VideoItemCollectionViewCell")
 
     fileprivate init() {}
   }
@@ -165,9 +681,50 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _AudioItemTableViewCell.validate()
+    }
+
+    struct _AudioItemTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "AudioItemTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> AudioItemTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? AudioItemTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "play", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'play' is used in nib 'AudioItemTableViewCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _VideoItemTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "VideoItemTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> VideoItemTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? VideoItemTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -212,9 +769,14 @@ struct _R: Rswift.Validatable {
     #if os(iOS) || os(tvOS)
     struct home: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
+      let editorViewController = StoryboardViewControllerResource<EditorViewController>(identifier: "EditorViewController")
       let homeViewController = StoryboardViewControllerResource<HomeViewController>(identifier: "HomeViewController")
       let name = "Home"
       let pickerViewController = StoryboardViewControllerResource<PickerViewController>(identifier: "PickerViewController")
+
+      func editorViewController(_: Void = ()) -> EditorViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: editorViewController)
+      }
 
       func homeViewController(_: Void = ()) -> HomeViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: homeViewController)
@@ -225,12 +787,14 @@ struct _R: Rswift.Validatable {
       }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "arrow.turn.down.right", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'arrow.turn.down.right' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "checkmark.circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkmark.circle' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "plus.rectangle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'plus.rectangle' is used in storyboard 'Home', but couldn't be loaded.") }
         if UIKit.UIImage(named: "xmark", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'xmark' is used in storyboard 'Home', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.home().editorViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'editorViewController' could not be loaded from storyboard 'Home' as 'EditorViewController'.") }
         if _R.storyboard.home().homeViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'homeViewController' could not be loaded from storyboard 'Home' as 'HomeViewController'.") }
         if _R.storyboard.home().pickerViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pickerViewController' could not be loaded from storyboard 'Home' as 'PickerViewController'.") }
       }
@@ -257,14 +821,39 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "Main"
+      let pickerTabBarController = StoryboardViewControllerResource<PickerTabBarController>(identifier: "PickerTabBarController")
+      let playerViewController = StoryboardViewControllerResource<PlayerViewController>(identifier: "PlayerViewController")
+      let timeLineViewController = StoryboardViewControllerResource<TimeLineViewController>(identifier: "TimeLineViewController")
+
+      func pickerTabBarController(_: Void = ()) -> PickerTabBarController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: pickerTabBarController)
+      }
+
+      func playerViewController(_: Void = ()) -> PlayerViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: playerViewController)
+      }
+
+      func timeLineViewController(_: Void = ()) -> TimeLineViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: timeLineViewController)
+      }
 
       static func validate() throws {
+        if UIKit.UIImage(named: "THTabBarAudio", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'THTabBarAudio' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "THTabBarAudio_selected", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'THTabBarAudio_selected' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "THTabBarVideo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'THTabBarVideo' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "THTabBarVideo_selected", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'THTabBarVideo_selected' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "mp_play_button", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'mp_play_button' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "pv_stop_icon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'pv_stop_icon' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "shift.fill", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'shift.fill' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().pickerTabBarController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'pickerTabBarController' could not be loaded from storyboard 'Main' as 'PickerTabBarController'.") }
+        if _R.storyboard.main().playerViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'playerViewController' could not be loaded from storyboard 'Main' as 'PlayerViewController'.") }
+        if _R.storyboard.main().timeLineViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'timeLineViewController' could not be loaded from storyboard 'Main' as 'TimeLineViewController'.") }
       }
 
       fileprivate init() {}

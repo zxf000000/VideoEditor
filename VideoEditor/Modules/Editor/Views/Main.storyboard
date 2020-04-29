@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K5i-r9-w0h">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fifteen Seconds-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="thS-gS-4aP"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Fifteen Seconds" id="tgo-wN-jKL">
+                        <barButtonItem key="leftBarButtonItem" title="Export" image="shift.fill" catalog="system" id="7xE-vH-UvK">
+                            <connections>
+                                <action selector="tapExport:" destination="BYZ-38-t0r" id="aFQ-NL-rQB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xps-yz-N81">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="tapAddItem:" destination="BYZ-38-t0r" id="rIE-8o-lH6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="-804"/>
+        </scene>
+        <!--Audio Picker View Controller-->
+        <scene sceneID="P7S-30-8A7">
+            <objects>
+                <viewController id="1Yu-mw-OwE" customClass="AudioPickerViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4AH-QX-EDh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="STV-zM-dwa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Yu-mw-OwE" id="n4O-ZE-Oay"/>
+                                    <outlet property="delegate" destination="1Yu-mw-OwE" id="Uq0-EZ-uzd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="STV-zM-dwa" firstAttribute="top" secondItem="pwU-GG-fVZ" secondAttribute="top" id="3dn-v1-xgz"/>
+                            <constraint firstItem="pwU-GG-fVZ" firstAttribute="trailing" secondItem="STV-zM-dwa" secondAttribute="trailing" id="Mz7-sy-MBG"/>
+                            <constraint firstItem="pwU-GG-fVZ" firstAttribute="bottom" secondItem="STV-zM-dwa" secondAttribute="bottom" id="UKb-9N-y3i"/>
+                            <constraint firstItem="STV-zM-dwa" firstAttribute="leading" secondItem="pwU-GG-fVZ" secondAttribute="leading" id="W1a-Pk-0gp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pwU-GG-fVZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="THTabBarAudio" selectedImage="THTabBarAudio_selected" id="i9X-NT-kmS"/>
+                    <connections>
+                        <outlet property="tableView" destination="STV-zM-dwa" id="TFF-Xk-tL0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gd-zM-jR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771" y="-350"/>
+        </scene>
+        <!--Time Line View Controller-->
+        <scene sceneID="Ke2-N1-I5E">
+            <objects>
+                <viewController storyboardIdentifier="TimeLineViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nDO-Hm-aIr" customClass="TimeLineViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z9x-jX-rDx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-5b-Wfx">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="KAx-Db-Xhk" customClass="TimelineLayout" customModule="VideoEditor" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VideoItemCollectionViewCell" id="EjS-g3-EtQ" customClass="VideoItemCollectionViewCell" customModule="VideoEditor" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EJe-7X-zrv">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TitleItemCollectionViewCell" id="VcI-uA-NvL" customClass="TimeLineItemCollectionViewCell" customModule="VideoEditor" customModuleProvider="target">
+                                        <rect key="frame" x="60.5" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EBC-Dv-l3X">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AudioItemCollectionViewCell" id="giu-ef-SW7" customClass="AudioItemCollectionViewCell" customModule="VideoEditor" customModuleProvider="target">
+                                        <rect key="frame" x="121.5" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jzW-cz-HkX">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TransitionCollectionViewCell" id="WK6-qk-DIq" customClass="TransitionCollectionViewCell" customModule="VideoEditor" customModuleProvider="target">
+                                        <rect key="frame" x="182" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kGy-Bb-sbz">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xd2-5b-Wfx" firstAttribute="leading" secondItem="W3j-3u-Fer" secondAttribute="leading" id="7F8-Xv-fap"/>
+                            <constraint firstItem="xd2-5b-Wfx" firstAttribute="top" secondItem="W3j-3u-Fer" secondAttribute="top" id="8ug-dR-yQz"/>
+                            <constraint firstItem="W3j-3u-Fer" firstAttribute="trailing" secondItem="xd2-5b-Wfx" secondAttribute="trailing" id="d5O-Aw-E3b"/>
+                            <constraint firstItem="W3j-3u-Fer" firstAttribute="bottom" secondItem="xd2-5b-Wfx" secondAttribute="bottom" id="tMY-Ld-EX4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W3j-3u-Fer"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="xd2-5b-Wfx" id="8lV-ZD-01t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fcE-9f-5uc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="-332"/>
+        </scene>
+        <!--Video Picker View Controller-->
+        <scene sceneID="N36-5M-TXB">
+            <objects>
+                <viewController id="M28-LW-VFb" customClass="VideoPickerViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dvb-4b-o5v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lh6-nG-anK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="M28-LW-VFb" id="TWW-3P-Nte"/>
+                                    <outlet property="delegate" destination="M28-LW-VFb" id="PxV-ZI-iI6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Gc-vf-dnW" firstAttribute="bottom" secondItem="Lh6-nG-anK" secondAttribute="bottom" id="MjQ-sX-GOo"/>
+                            <constraint firstItem="Lh6-nG-anK" firstAttribute="leading" secondItem="2Gc-vf-dnW" secondAttribute="leading" id="OQL-E0-on8"/>
+                            <constraint firstItem="2Gc-vf-dnW" firstAttribute="trailing" secondItem="Lh6-nG-anK" secondAttribute="trailing" id="YPv-5H-CKa"/>
+                            <constraint firstItem="Lh6-nG-anK" firstAttribute="top" secondItem="2Gc-vf-dnW" secondAttribute="top" id="bdY-tE-TT6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Gc-vf-dnW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="THTabBarVideo" selectedImage="THTabBarVideo_selected" id="uMH-RB-se3"/>
+                    <connections>
+                        <outlet property="tableView" destination="Lh6-nG-anK" id="Buq-qA-wZL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bo4-vF-732" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="-1049"/>
+        </scene>
+        <!--Picker Tab Bar Controller-->
+        <scene sceneID="UnP-2t-PeI">
+            <objects>
+                <tabBarController storyboardIdentifier="PickerTabBarController" id="vyg-bE-GBO" customClass="PickerTabBarController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BAh-uR-6zc"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eEU-9e-Dvk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="M28-LW-VFb" kind="relationship" relationship="viewControllers" id="hjI-kq-VDF"/>
+                        <segue destination="1Yu-mw-OwE" kind="relationship" relationship="viewControllers" id="3TL-NM-xhE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3iu-ww-JGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6" y="-1035"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Kf-Rx-I7m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K5i-r9-w0h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3VA-Os-Vmf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0eJ-0A-xEr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgP-IO-OEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-532" y="-36"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="qV6-eR-tdx">
+            <objects>
+                <viewController storyboardIdentifier="PlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gh7-F1-ksI" customClass="PlayerViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5y5-OA-Qb7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Luj-fJ-c8w" customClass="PlaybackView" customModule="VideoEditor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-QE-wD5">
+                                        <rect key="frame" x="197" y="309" width="20" height="20"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="6iQ-QE-wD5" firstAttribute="centerX" secondItem="Luj-fJ-c8w" secondAttribute="centerX" id="e0Z-L4-pMb"/>
+                                    <constraint firstItem="6iQ-QE-wD5" firstAttribute="centerY" secondItem="Luj-fJ-c8w" secondAttribute="centerY" id="qbB-dZ-P3q"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJ0-kl-eII">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Y2E-Fs-IYI"/>
+                                </constraints>
+                                <state key="normal" image="mp_play_button"/>
+                                <state key="selected" image="pv_stop_icon"/>
+                                <connections>
+                                    <action selector="play:" destination="gh7-F1-ksI" eventType="touchUpInside" id="t6H-1t-EQ1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="gJ0-kl-eII" firstAttribute="leading" secondItem="gRh-Zj-ub6" secondAttribute="leading" id="9nh-Lr-g4a"/>
+                            <constraint firstItem="gJ0-kl-eII" firstAttribute="top" secondItem="Luj-fJ-c8w" secondAttribute="bottom" id="WIu-yl-Jks"/>
+                            <constraint firstItem="Luj-fJ-c8w" firstAttribute="top" secondItem="gRh-Zj-ub6" secondAttribute="top" id="Ykx-5i-ESQ"/>
+                            <constraint firstItem="gRh-Zj-ub6" firstAttribute="trailing" secondItem="gJ0-kl-eII" secondAttribute="trailing" id="fNz-Ej-bns"/>
+                            <constraint firstItem="gRh-Zj-ub6" firstAttribute="bottom" secondItem="Luj-fJ-c8w" secondAttribute="bottom" constant="50" id="kZh-T3-yzc"/>
+                            <constraint firstItem="Luj-fJ-c8w" firstAttribute="leading" secondItem="gRh-Zj-ub6" secondAttribute="leading" id="sh6-3N-KFk"/>
+                            <constraint firstItem="gRh-Zj-ub6" firstAttribute="trailing" secondItem="Luj-fJ-c8w" secondAttribute="trailing" id="yTR-ry-UFT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gRh-Zj-ub6"/>
+                    </view>
+                    <connections>
+                        <outlet property="indicatorView" destination="6iQ-QE-wD5" id="10b-9B-nJl"/>
+                        <outlet property="playButton" destination="gJ0-kl-eII" id="Dfy-HB-lTj"/>
+                        <outlet property="playbackView" destination="Luj-fJ-c8w" id="Aht-Pp-bZg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iha-Tm-8Mv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3386" y="-332"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="THTabBarAudio" width="25" height="25"/>
+        <image name="THTabBarAudio_selected" width="25" height="25"/>
+        <image name="THTabBarVideo" width="21" height="25"/>
+        <image name="THTabBarVideo_selected" width="21" height="25"/>
+        <image name="mp_play_button" width="39" height="39"/>
+        <image name="pv_stop_icon" width="18" height="14"/>
+        <image name="shift.fill" catalog="system" width="128" height="106"/>
+    </resources>
+</document>

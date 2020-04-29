@@ -9,7 +9,7 @@ target 'VideoEditor' do
   pod 'RxCocoa'
   pod 'SnapKit'
   pod 'R.swift'
-
+  pod 'MBProgressHUD'
   # Pods for VideoEditor
 
   target 'VideoEditorTests' do

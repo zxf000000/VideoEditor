@@ -2,8 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,8 +91,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-ro-Eu1">
-                                <rect key="frame" x="20" y="45" width="44" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7j-ky-KKo">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TFE-7O-dYC"/>
+                                </constraints>
+                                <state key="normal" title="done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapCheckButton:" destination="dr0-Uf-Yj0" eventType="touchUpInside" id="So5-XC-Rqy"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2Q-9H-2Q8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcp-cn-WgF">
+                                        <rect key="frame" x="102.5" y="421" width="209" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="没有开启相册权限,去开启 " image="arrow.turn.down.right" catalog="system">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Zcp-cn-WgF" firstAttribute="centerY" secondItem="P2Q-9H-2Q8" secondAttribute="centerY" id="rNi-5C-cXx"/>
+                                    <constraint firstItem="Zcp-cn-WgF" firstAttribute="centerX" secondItem="P2Q-9H-2Q8" secondAttribute="centerX" id="v82-xN-Ran"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-ro-Eu1">
+                                <rect key="frame" x="0.0" y="44" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="pFO-Hb-w1o"/>
                                     <constraint firstAttribute="width" constant="44" id="rsi-Mn-Kts"/>
@@ -112,9 +141,9 @@
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M4D-Qn-gF6">
-                                <rect key="frame" x="0.0" y="81.5" width="414" height="780.5"/>
+                                <rect key="frame" x="0.0" y="91.5" width="414" height="726.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kWl-dd-ITv">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kWl-dd-ITv" customClass="PickerFlowLayer" customModule="VideoEditor" customModuleProvider="target">
                                     <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -165,39 +194,80 @@
                                         <size key="customSize" width="213" height="198"/>
                                         <connections>
                                             <outlet property="previewImageView" destination="YfZ-ga-tKn" id="YdI-VN-jJ6"/>
+                                            <outlet property="selectButton" destination="HNr-3p-MNb" id="XqH-Ss-k7T"/>
                                             <outlet property="timeLabel" destination="Ryh-h1-7fG" id="9Kp-qu-j5q"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="dr0-Uf-Yj0" id="fIJ-0Q-aBN"/>
-                                    <outlet property="delegate" destination="dr0-Uf-Yj0" id="o9X-TY-P5K"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="M4D-Qn-gF6" firstAttribute="leading" secondItem="XeE-mN-CzN" secondAttribute="leading" id="1RH-wy-an6"/>
+                            <constraint firstItem="P2Q-9H-2Q8" firstAttribute="top" secondItem="rtM-3b-zUQ" secondAttribute="top" id="76k-DU-R7V"/>
                             <constraint firstItem="gGl-ro-Eu1" firstAttribute="leading" secondItem="XeE-mN-CzN" secondAttribute="leading" id="Ck3-rS-eAS"/>
                             <constraint firstItem="XeE-mN-CzN" firstAttribute="trailing" secondItem="M4D-Qn-gF6" secondAttribute="trailing" id="Dbw-GN-sFs"/>
+                            <constraint firstItem="XeE-mN-CzN" firstAttribute="trailing" secondItem="P2Q-9H-2Q8" secondAttribute="trailing" id="HLQ-Iu-c6H"/>
                             <constraint firstItem="xfH-9s-hUc" firstAttribute="centerX" secondItem="rtM-3b-zUQ" secondAttribute="centerX" id="HO3-Va-Eaj"/>
-                            <constraint firstItem="M4D-Qn-gF6" firstAttribute="top" secondItem="xfH-9s-hUc" secondAttribute="bottom" id="JZ9-Dl-Djo"/>
-                            <constraint firstItem="XeE-mN-CzN" firstAttribute="bottom" secondItem="M4D-Qn-gF6" secondAttribute="bottom" id="Tvr-8U-h8i"/>
+                            <constraint firstItem="M4D-Qn-gF6" firstAttribute="top" secondItem="xfH-9s-hUc" secondAttribute="bottom" constant="10" id="JZ9-Dl-Djo"/>
+                            <constraint firstItem="XeE-mN-CzN" firstAttribute="bottom" secondItem="P2Q-9H-2Q8" secondAttribute="bottom" id="KnU-qE-GZ4"/>
+                            <constraint firstItem="XeE-mN-CzN" firstAttribute="bottom" secondItem="r7j-ky-KKo" secondAttribute="bottom" id="NQa-0O-PM5"/>
+                            <constraint firstItem="r7j-ky-KKo" firstAttribute="leading" secondItem="XeE-mN-CzN" secondAttribute="leading" id="Swa-gT-oWb"/>
+                            <constraint firstItem="XeE-mN-CzN" firstAttribute="bottom" secondItem="M4D-Qn-gF6" secondAttribute="bottom" constant="44" id="Tvr-8U-h8i"/>
+                            <constraint firstItem="P2Q-9H-2Q8" firstAttribute="leading" secondItem="XeE-mN-CzN" secondAttribute="leading" id="gV3-0E-6zM"/>
                             <constraint firstItem="gGl-ro-Eu1" firstAttribute="top" secondItem="XeE-mN-CzN" secondAttribute="top" id="m8y-zc-blC"/>
                             <constraint firstItem="xfH-9s-hUc" firstAttribute="centerY" secondItem="gGl-ro-Eu1" secondAttribute="centerY" id="ot2-cJ-gPe"/>
+                            <constraint firstItem="r7j-ky-KKo" firstAttribute="trailing" secondItem="XeE-mN-CzN" secondAttribute="trailing" id="vsz-y2-fW4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XeE-mN-CzN"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="gGl-ro-Eu1" id="tt2-YU-y9w"/>
+                        <outlet property="collectionView" destination="M4D-Qn-gF6" id="TbM-0H-egd"/>
+                        <outlet property="emptyView" destination="P2Q-9H-2Q8" id="koz-t4-jfB"/>
+                        <outlet property="exportButton" destination="r7j-ky-KKo" id="lcd-Sn-CW4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSv-gz-v8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224.63768115942031" y="-682.36607142857144"/>
+            <point key="canvasLocation" x="-252.17391304347828" y="-686.38392857142856"/>
+        </scene>
+        <!--Editor View Controller-->
+        <scene sceneID="Pea-Vz-6hh">
+            <objects>
+                <viewController storyboardIdentifier="EditorViewController" id="UJc-lC-eOP" customClass="EditorViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m8I-7D-7hc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md6-7s-XOv">
+                                <rect key="frame" x="0.0" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="H3I-ue-E0O"/>
+                                    <constraint firstAttribute="height" constant="44" id="Tm1-9X-S6q"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="tapCancelButton:" destination="UJc-lC-eOP" eventType="touchUpInside" id="zy6-h9-bhj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="md6-7s-XOv" firstAttribute="leading" secondItem="OIy-SR-heU" secondAttribute="leading" id="ST6-mW-R8M"/>
+                            <constraint firstItem="md6-7s-XOv" firstAttribute="top" secondItem="OIy-SR-heU" secondAttribute="top" id="oeC-9T-J93"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OIy-SR-heU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fX-zE-8Sq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="-686"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.turn.down.right" catalog="system" width="128" height="99"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>

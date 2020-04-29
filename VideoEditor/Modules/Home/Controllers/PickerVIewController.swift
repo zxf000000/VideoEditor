@@ -7,33 +7,96 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import MBProgressHUD
+import AVFoundation
 
 class PickerViewController: UIViewController {
     
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet weak var exportButton: UIButton!
+    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    weak var exportSubject: PublishSubject<[AVAsset]>?
+    
+    var viewModel: PickerViewModel = PickerViewModel()
+    
+    var trigger: PublishSubject<Void> = PublishSubject()
+    
+    var disposeBag: DisposeBag! = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        exportButton.setBackgroundImage(UIImage.generateImage(with: UIColor.systemRed), for: .normal)
+        
+        bindViewModel()
+    }
+    
+    @IBAction func tapCheckButton(_ sender: Any) {
+        
+        let HUD = MBProgressHUD.xf_showProgress()
+        
+        var selectedModels = [AssetModel]()
+        for model in viewModel.models {
+            if model.isSelected {
+                selectedModels.append(model)
+            }
+        }
+        // loadAssetWithModel
+        viewModel.loadAVAssets(models: selectedModels, completion: { [weak self] (assets) in
+            DispatchQueue.main.async {
+                HUD.xf_showText(text: "处理成功")
+                self?.dismiss(animated: false, completion: nil)
+                self?.exportSubject?.onNext(assets)
+            }
+
+        }) { (error) in
+            if error == false {
+                HUD.xf_showText(text: "处理失败")
+            } else {
+                HUD.xf_showText(text: "处理成功")
+            }
+        }
+        
+    }
+    func bindViewModel() {
+        let input = PickerViewModel.Input(trigger: trigger.asDriver(onErrorJustReturn: ()), selection: collectionView.rx.itemSelected.asDriver())
+        let output = viewModel.transform(input: input)
+
+        output.models
+            .drive(collectionView.rx.items(cellIdentifier: "PickerCollectionViewCell", cellType: PickerCollectionViewCell.self)) { [weak self] (row, element, cell) in
+                guard let strongSelf = self else {return}
+                cell.updateModel(assetModel: element)
+                cell.didTapSelectButtonBlock = { [weak strongSelf] (isSelected) in
+                      guard let sSelf = strongSelf else {return}
+                     var model = sSelf.viewModel.models[row]
+                     model.isSelected = isSelected
+                     sSelf.viewModel.models[row] = model
+                 }
+            }
+            .disposed(by: disposeBag)
+        
+        output.authrizedStatus.flatMap { (status) -> Driver<Bool> in
+            var result = false
+            if status != .authorized {
+                result = false
+            } else {
+                result = true
+            }
+            return Driver.just(result)
+            }
+            .drive(emptyView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        trigger.onNext(())
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
-extension PickerViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PickerCollectionViewCell", for: indexPath)
-        return cell
-
-    }
-}

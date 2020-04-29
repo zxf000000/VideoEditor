@@ -8,6 +8,19 @@
 
 import Photos
 
-class AssetModel {
+enum AssetModelMediaType: Int {
+    case Photo = 0
+    case Video
+    case LivePhoto
+    case Audio
+    case Gif
+}
+
+struct AssetModel {
     var asset: PHAsset!
+    var type: AssetModelMediaType!
+    var isSelected: Bool = false
+    var timeLength: String!
+    
+    
 }
