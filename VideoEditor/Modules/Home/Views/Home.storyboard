@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -226,6 +226,7 @@
                         <outlet property="collectionView" destination="M4D-Qn-gF6" id="TbM-0H-egd"/>
                         <outlet property="emptyView" destination="P2Q-9H-2Q8" id="koz-t4-jfB"/>
                         <outlet property="exportButton" destination="r7j-ky-KKo" id="lcd-Sn-CW4"/>
+                        <outlet property="segmentView" destination="xfH-9s-hUc" id="QUO-QF-mIk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSv-gz-v8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

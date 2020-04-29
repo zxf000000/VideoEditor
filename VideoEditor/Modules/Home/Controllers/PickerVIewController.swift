@@ -16,6 +16,7 @@ class PickerViewController: UIViewController {
     
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet weak var segmentView: UISegmentedControl!
     @IBOutlet weak var exportButton: UIButton!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -67,7 +68,18 @@ class PickerViewController: UIViewController {
         let input = PickerViewModel.Input(trigger: trigger.asDriver(onErrorJustReturn: ()), selection: collectionView.rx.itemSelected.asDriver())
         let output = viewModel.transform(input: input)
 
-        output.models
+        output.models.flatMap({ [weak self] (models) -> Driver<[AssetModel]> in
+            var newModels = [AssetModel]()
+            for model in models {
+                if self?.segmentView.selectedSegmentIndex == 0 && model.type == .Video {
+                    newModels.append(model)
+                }
+                if self?.segmentView.selectedSegmentIndex == 1 && model.type == .Photo {
+                    newModels.append(model)
+                }
+            }
+            return Driver.just(newModels)
+        })
             .drive(collectionView.rx.items(cellIdentifier: "PickerCollectionViewCell", cellType: PickerCollectionViewCell.self)) { [weak self] (row, element, cell) in
                 guard let strongSelf = self else {return}
                 cell.updateModel(assetModel: element)

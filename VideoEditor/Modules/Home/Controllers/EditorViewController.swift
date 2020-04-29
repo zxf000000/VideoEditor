@@ -47,10 +47,8 @@ class EditorViewController: UIViewController {
         if assets.count > 0 {
             var videoItem: VideoItem?
             for asset in assets {
-                if asset.tracks(withMediaType: .video).count > 0 {
-                    videoItem = VideoItem(url: (asset as! AVURLAsset).url)
-                    addMediaItem(item: videoItem!, toTimelineTrack: .video)
-                }
+                videoItem = VideoItem(url: (asset as! AVURLAsset).url)
+                addMediaItem(item: videoItem!, toTimelineTrack: .video)
             }
         }
         

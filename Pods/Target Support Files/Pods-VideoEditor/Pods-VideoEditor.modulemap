@@ -1,4 +1,4 @@
-framework module Pods_VideoEditor {
+module Pods_VideoEditor {
   umbrella header "Pods-VideoEditor-umbrella.h"
 
   export *

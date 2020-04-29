@@ -31,7 +31,6 @@ class PickerViewModel: ViewModelType {
         let outputStatus = input.trigger.flatMap { [weak self] (_) -> Driver<PHAuthorizationStatus> in
             return (self?.checkStatus())!.asDriver(onErrorDriveWith: Driver.empty())
         }
-                        
         return Output(models: modelsSubject.asDriver(onErrorJustReturn: [AssetModel]()), authrizedStatus: outputStatus)
     }
     
@@ -57,7 +56,7 @@ class PickerViewModel: ViewModelType {
     
     func loadPhoto() {
         let fetchOption = PHFetchOptions()
-        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let smartAlbums = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
         smartAlbums.enumerateObjects {[weak self] (collection, index, stop) in
             if collection.estimatedAssetCount > 0 {
