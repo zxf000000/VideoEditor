@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B66FB5DC0C014869DD6788046917404A"
-               BuildableName = "Pods_VideoEditor_VideoEditorUITests.framework"
+               BuildableName = "libPods-VideoEditor-VideoEditorUITests.a"
                BlueprintName = "Pods-VideoEditor-VideoEditorUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

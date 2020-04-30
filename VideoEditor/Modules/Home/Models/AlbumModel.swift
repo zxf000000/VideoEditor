@@ -17,14 +17,17 @@ class AlbumModel {
     var selectedCount: Int?
     var isCameraRoll: Bool!
     
+    var loadCompletion: NoneParamsCallback?
     
     init(result: PHFetchResult<PHAsset>,
          name: String,
          isCameraRoll: Bool,
-         needFetchAssets: Bool) {
+         needFetchAssets: Bool,
+         loadCompletion: @escaping SingleParamsCallback<[AssetModel]>) {
         if needFetchAssets {
             getAssets(from: result) { [weak self] (models) in
                 self?.models = models
+                loadCompletion(models)
             }
         }
         self.name = name

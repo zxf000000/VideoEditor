@@ -11,4 +11,6 @@ import UIKit
 class CompositionLayer: TimeLineItem {
     var identifier: String?
     var layer: CALayer?
+    
+    
 }

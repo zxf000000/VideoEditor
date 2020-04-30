@@ -33,7 +33,7 @@ let DEFAULT_TRACK_HEIGHT: CGFloat = TIMELINE_VIDEO_CELL_HEIGHT
 let DEFAULT_CLIP_SPACING: CGFloat = 0.0
 let TRANSITION_CONTROL_HW: CGFloat = 32.0
 let VERTICAL_PADDING: CGFloat = 4.0
-let DEFAULT_INSETS = UIEdgeInsets(top: TIMELINE_VIDEO_CELL_HEIGHT, left: ScreenWidth / 2, bottom: 5, right: ScreenWidth / 2)
+let DEFAULT_INSETS = UIEdgeInsets(top: TIMELINE_VIDEO_CELL_HEIGHT, left: ScreenWidth / 2, bottom: 0, right: ScreenWidth / 2)
 
 
 class TimelineLayout: UICollectionViewLayout {
@@ -82,6 +82,8 @@ class TimelineLayout: UICollectionViewLayout {
     private var dragMode: DragMode?
     
     private var trimming: Bool?
+    
+    private var timelineLayers = [CAShapeLayer]()
     
     override init() {
         super.init()
@@ -144,6 +146,28 @@ class TimelineLayout: UICollectionViewLayout {
         }
         self.contentSize = CGSize(width: maxTrackWidth + (trackInsets?.right)!, height: CGFloat(trackCount!) * self.trackHeight!);
         caculateLayout = layoutDic
+        
+        // 绘制时间轴
+        drawTimelineLayers()
+        
+    }
+    
+    func drawTimelineLayers() {
+        for layer in timelineLayers {
+            layer.removeFromSuperlayer()
+        }
+        timelineLayers.removeAll()
+        let mainLayer = CAShapeLayer()
+        mainLayer.lineWidth = 2
+        mainLayer.strokeColor = UIColor.white.cgColor
+        collectionView?.layer.addSublayer(mainLayer)
+        
+        let mainPath = UIBezierPath()
+        mainPath.move(to: CGPoint(x: trackInsets?.left ?? 0, y: 20))
+        mainPath.addLine(to: CGPoint(x: (contentSize?.width)! - (trackInsets?.right)! , y: 20))
+        mainLayer.path = mainPath.cgPath
+        
+        
     }
     
     override var collectionViewContentSize: CGSize {

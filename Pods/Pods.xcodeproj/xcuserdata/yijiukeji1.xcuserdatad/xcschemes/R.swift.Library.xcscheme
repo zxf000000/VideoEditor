@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B12748D8506CB48696BD90F2CA4F4E38"
-               BuildableName = "Rswift.framework"
+               BuildableName = "libR.swift.Library.a"
                BlueprintName = "R.swift.Library"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

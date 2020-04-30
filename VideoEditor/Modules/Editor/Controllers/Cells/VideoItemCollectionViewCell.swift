@@ -30,6 +30,8 @@ class VideoItemCollectionViewCell: UICollectionViewCell {
         setup()
     }
     
+    
+    
     func updateItem(videoItem: VideoItem) {
         self.videoItem = videoItem
         
@@ -50,7 +52,7 @@ class VideoItemCollectionViewCell: UICollectionViewCell {
         generate.requestedTimeToleranceBefore = .zero
         generate.generateCGImagesAsynchronously(forTimes: times) { [weak self] (time, image, actualTime, result, error) in
             var resultImage: UIImage?
-            if image != nil {
+            if image != nil { 
                 resultImage = UIImage(cgImage: image!)
                 self?.images.append(resultImage!)
             } else {
@@ -58,43 +60,52 @@ class VideoItemCollectionViewCell: UICollectionViewCell {
                 self?.images.append(resultImage!)
             }
             if self?.images.count ?? 0 == times.count {
-                self?.update()
+                DispatchQueue.main.async {
+                    self?.setNeedsLayout()
+                }
             }
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        update()
+        
+    }
+    
     func update() {
-        DispatchQueue.main.async {[weak self] in
-            guard let strongSelf = self else {return}
-            for layer in strongSelf.imageLayers {
+            for layer in self.imageLayers {
                 layer.removeFromSuperlayer()
             }
-            strongSelf.imageLayers.removeAll()
+            self.imageLayers.removeAll()
             
-            for (index, image) in strongSelf.images.enumerated() {
+            for (index, image) in self.images.enumerated() {
                 let x = CGFloat(index) * SinglePreviewPicWidth
                 let y = 0
                 let width = SinglePreviewPicWidth
                 let height = SinglePreviewPicWidth
-                
-                print("index   \(index), x   \(x)")
-                
+                                
                 let layer = CALayer()
                 layer.backgroundColor = UIColor.yellow.cgColor
                 layer.contents = image.cgImage
                 layer.frame = CGRect(x: x, y: CGFloat(y), width: width, height: height)
                 layer.contentsGravity = .resizeAspectFill
-                strongSelf.layer.addSublayer(layer)
-                strongSelf.imageLayers.append(layer)
+
+                layer.masksToBounds = true
+                layer.borderWidth = 0.5
+                layer.borderColor = UIColor.white.cgColor
+                self.contentView.layer.addSublayer(layer)
+                self.imageLayers.append(layer)
             }
-        }
+        
     }
     
     func setup() {
 //        itemView = TimeLineItemView(frame: bounds)
 //        contentView.addSubview(itemView)
         
-        
+        backgroundColor = UIColor.xf_RandomColor()
         
     }
     
@@ -103,9 +114,5 @@ class VideoItemCollectionViewCell: UICollectionViewCell {
         return false
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-//        itemView.frame = self.bounds
-    }
+
 }

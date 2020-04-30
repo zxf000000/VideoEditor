@@ -28,4 +28,11 @@ extension UIColor {
         }
         return UIColor()
     }
+    
+    class func xf_RandomColor() -> UIColor {
+        return UIColor(red: CGFloat(arc4random()%256)/CGFloat(255),
+                       green: CGFloat(arc4random()%256)/CGFloat(255),
+                       blue: CGFloat(arc4random()%256)/CGFloat(255),
+                       alpha: 1)
+    }
 }

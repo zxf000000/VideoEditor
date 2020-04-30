@@ -22,6 +22,7 @@ class PlayerViewController: UIViewController  {
     
     @IBOutlet weak var progressView: UIProgressView!
     
+    
     var exporting: Bool = false {
         didSet {
             if exporting == true {

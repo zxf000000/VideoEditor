@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B67956D7D3249F8486C991 /* Pods_VideoEditorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C61826D25B2113AF097C626A /* Pods_VideoEditorTests.framework */; };
-		3785AE625C7CDC51A06DF7E2 /* Pods_VideoEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B35B5C1A5E1930EEAB4B8C /* Pods_VideoEditor.framework */; };
+		21B6EBC806C00C26D6EDD762 /* libPods-VideoEditorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80924FDC5B8C610FB32BC571 /* libPods-VideoEditorTests.a */; };
+		26BF7744765A9E6DB0F69A53 /* libPods-VideoEditor-VideoEditorUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 306254C56C15885D134826CA /* libPods-VideoEditor-VideoEditorUITests.a */; };
+		4E4184EA245A72E00046A2D2 /* EditorPreviewMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4184E9245A72E00046A2D2 /* EditorPreviewMediator.swift */; };
 		4E750094245923C800DB3E44 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E750093245923C800DB3E44 /* AlbumModel.swift */; };
 		4E750096245946FD00DB3E44 /* PickerFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E750095245946FD00DB3E44 /* PickerFlowLayout.swift */; };
 		4E750098245954BE00DB3E44 /* HUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E750097245954BE00DB3E44 /* HUDManager.swift */; };
@@ -68,6 +69,7 @@
 		4E75011024596D6800DB3E44 /* ThumbnailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75010B24596D6800DB3E44 /* ThumbnailsView.swift */; };
 		4E75011124596D6800DB3E44 /* PlayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75010C24596D6800DB3E44 /* PlayHeaderView.swift */; };
 		4E75011324596F6C00DB3E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E75011224596F6C00DB3E44 /* Main.storyboard */; };
+		52898E914823BFD95B69E411 /* libPods-VideoEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BD544310EE4E952178D3B6 /* libPods-VideoEditor.a */; };
 		B7F0F0FA24586C75007EF9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F0F924586C75007EF9E9 /* AppDelegate.swift */; };
 		B7F0F0FE24586C75007EF9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F0FD24586C75007EF9E9 /* ViewController.swift */; };
 		B7F0F10324586C76007EF9E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7F0F10224586C76007EF9E9 /* Assets.xcassets */; };
@@ -89,7 +91,6 @@
 		B7F0F16124588332007EF9E9 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F16024588332007EF9E9 /* ViewModelType.swift */; };
 		B7F0F163245883D5007EF9E9 /* AssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F162245883D5007EF9E9 /* AssetModel.swift */; };
 		B7F0F16524588530007EF9E9 /* UIAlertController+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F16424588530007EF9E9 /* UIAlertController+Add.swift */; };
-		E3A1D94794BB82ABF0058901 /* Pods_VideoEditor_VideoEditorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB5B764DCA91E53398DF26B6 /* Pods_VideoEditor_VideoEditorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,9 @@
 /* Begin PBXFileReference section */
 		0DD4E1614045C4ED02775F96 /* Pods-VideoEditor-VideoEditorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditor-VideoEditorUITests.debug.xcconfig"; path = "Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F474EB03AEDEB8E260547BC /* Pods-VideoEditor-VideoEditorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditor-VideoEditorUITests.release.xcconfig"; path = "Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		306254C56C15885D134826CA /* libPods-VideoEditor-VideoEditorUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoEditor-VideoEditorUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37BD544310EE4E952178D3B6 /* libPods-VideoEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4184E9245A72E00046A2D2 /* EditorPreviewMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPreviewMediator.swift; sourceTree = "<group>"; };
 		4E750093245923C800DB3E44 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		4E750095245946FD00DB3E44 /* PickerFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerFlowLayout.swift; path = VideoEditor/Modules/Home/Models/PickerFlowLayout.swift; sourceTree = SOURCE_ROOT; };
 		4E750097245954BE00DB3E44 /* HUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDManager.swift; sourceTree = "<group>"; };
@@ -171,8 +175,10 @@
 		4E75010B24596D6800DB3E44 /* ThumbnailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailsView.swift; sourceTree = "<group>"; };
 		4E75010C24596D6800DB3E44 /* PlayHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayHeaderView.swift; sourceTree = "<group>"; };
 		4E75011224596F6C00DB3E44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		81B35B5C1A5E1930EEAB4B8C /* Pods_VideoEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80924FDC5B8C610FB32BC571 /* libPods-VideoEditorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoEditorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		851932765F5F7CBF760208D8 /* Pods-VideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditor.debug.xcconfig"; path = "Target Support Files/Pods-VideoEditor/Pods-VideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		B7B122F02459CECF00EB3B2B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B122F22459CFFB00EB3B2B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F0F0F624586C75007EF9E9 /* VideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F0F0F924586C75007EF9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7F0F0FD24586C75007EF9E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,11 +206,9 @@
 		B7F0F16024588332007EF9E9 /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		B7F0F162245883D5007EF9E9 /* AssetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetModel.swift; sourceTree = "<group>"; };
 		B7F0F16424588530007EF9E9 /* UIAlertController+Add.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Add.swift"; sourceTree = "<group>"; };
-		C61826D25B2113AF097C626A /* Pods_VideoEditorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoEditorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA07D1FA7EEFD6939A982FF9 /* Pods-VideoEditorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditorTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoEditorTests/Pods-VideoEditorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFECA81FCE6F1FBAC2D7D7A9 /* Pods-VideoEditorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditorTests.release.xcconfig"; path = "Target Support Files/Pods-VideoEditorTests/Pods-VideoEditorTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4AD1D91C510219600C4728C /* Pods-VideoEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditor.release.xcconfig"; path = "Target Support Files/Pods-VideoEditor/Pods-VideoEditor.release.xcconfig"; sourceTree = "<group>"; };
-		FB5B764DCA91E53398DF26B6 /* Pods_VideoEditor_VideoEditorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoEditor_VideoEditorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3785AE625C7CDC51A06DF7E2 /* Pods_VideoEditor.framework in Frameworks */,
+				52898E914823BFD95B69E411 /* libPods-VideoEditor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B67956D7D3249F8486C991 /* Pods_VideoEditorTests.framework in Frameworks */,
+				21B6EBC806C00C26D6EDD762 /* libPods-VideoEditorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,13 +232,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3A1D94794BB82ABF0058901 /* Pods_VideoEditor_VideoEditorUITests.framework in Frameworks */,
+				26BF7744765A9E6DB0F69A53 /* libPods-VideoEditor-VideoEditorUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E4184E8245A72C10046A2D2 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				4E4184E9245A72E00046A2D2 /* EditorPreviewMediator.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		4E75009F24596D2200DB3E44 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 		4E7500AC24596D4800DB3E44 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				4E4184E8245A72C10046A2D2 /* Others */,
 				4E75010724596D6800DB3E44 /* Views */,
 				4E7500D424596D6000DB3E44 /* Models */,
 				4E7500AD24596D5800DB3E44 /* Controllers */,
@@ -375,9 +388,11 @@
 		72CAAAFFB957152AC06C4C98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				81B35B5C1A5E1930EEAB4B8C /* Pods_VideoEditor.framework */,
-				FB5B764DCA91E53398DF26B6 /* Pods_VideoEditor_VideoEditorUITests.framework */,
-				C61826D25B2113AF097C626A /* Pods_VideoEditorTests.framework */,
+				B7B122F22459CFFB00EB3B2B /* MBProgressHUD.framework */,
+				B7B122F02459CECF00EB3B2B /* MBProgressHUD.framework */,
+				37BD544310EE4E952178D3B6 /* libPods-VideoEditor.a */,
+				306254C56C15885D134826CA /* libPods-VideoEditor-VideoEditorUITests.a */,
+				80924FDC5B8C610FB32BC571 /* libPods-VideoEditorTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -660,7 +675,6 @@
 				B7F0F0F224586C75007EF9E9 /* Sources */,
 				B7F0F0F324586C75007EF9E9 /* Frameworks */,
 				B7F0F0F424586C75007EF9E9 /* Resources */,
-				E3120A0FB493D8455A05CA94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -698,7 +712,6 @@
 				B7F0F11324586C76007EF9E9 /* Sources */,
 				B7F0F11424586C76007EF9E9 /* Frameworks */,
 				B7F0F11524586C76007EF9E9 /* Resources */,
-				D786D5B6DFE3365A58C64CEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -849,23 +862,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D786D5B6DFE3365A58C64CEF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E0CBACBB5924389F5C839F23 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -888,23 +884,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E3120A0FB493D8455A05CA94 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor/Pods-VideoEditor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor/Pods-VideoEditor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoEditor/Pods-VideoEditor-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -923,6 +902,7 @@
 				4E7500F824596D6000DB3E44 /* CompositionBuilderFactory.swift in Sources */,
 				4E7500F724596D6000DB3E44 /* CompositionBuilder.swift in Sources */,
 				4E75009E245967F700DB3E44 /* EditorViewController.swift in Sources */,
+				4E4184EA245A72E00046A2D2 /* EditorPreviewMediator.swift in Sources */,
 				4E7500D224596D5800DB3E44 /* CompositionExporter.swift in Sources */,
 				4E7500CE24596D5800DB3E44 /* AudioPickerViewController.swift in Sources */,
 				4E75010424596D6000DB3E44 /* PlaybackMediator.swift in Sources */,
@@ -1155,6 +1135,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = me.zxf.VideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1175,6 +1156,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = me.zxf.VideoEditor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 let VideoItemCollectionViewCellID        = "VideoItemCollectionViewCell"
 let TransitionCollectionViewCellID    = "TransitionCollectionViewCell"
@@ -76,7 +76,10 @@ class TimelineDataSource:NSObject, UICollectionViewDataSource {
         item.prepare { [weak item] (result) in
             guard let strongItem = item else {return}
             if result {
+                item?.timeRange = CMTimeRangeMake(start: .zero, duration: item?.asset?.duration ?? .zero)
+                cell.maxTimeRagne = item?.timeRange
                 cell.updateItem(videoItem: strongItem)
+                
             }
         }
 //        cell.itemView.titleLabel.text = item.title ?? ""

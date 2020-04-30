@@ -18,21 +18,25 @@ class PickerViewModel: ViewModelType {
         var selection: Driver<IndexPath>
     }
     struct Output {
-        var models: Driver<[AssetModel]>
+        var videoModels: Driver<[AssetModel]>
+        var imageModels: Driver<[AssetModel]>
         var authrizedStatus: Driver<PHAuthorizationStatus>
     }
     
-    var modelsSubject: PublishSubject<[AssetModel]> = PublishSubject()
+    private var imageModelsSubject: PublishSubject<[AssetModel]> = PublishSubject()
+    private var videoModelsSubject: PublishSubject<[AssetModel]> = PublishSubject()
     
-    var models: [AssetModel] = [AssetModel]()
+    var videoModels: [AssetModel] = [AssetModel]()
+    var imageModels: [AssetModel] = [AssetModel]()
     
     func transform(input: Input) -> Output {
                 
         let outputStatus = input.trigger.flatMap { [weak self] (_) -> Driver<PHAuthorizationStatus> in
             return (self?.checkStatus())!.asDriver(onErrorDriveWith: Driver.empty())
         }
-                        
-        return Output(models: modelsSubject.asDriver(onErrorJustReturn: [AssetModel]()), authrizedStatus: outputStatus)
+        return Output(videoModels: videoModelsSubject.asDriver(onErrorJustReturn: [AssetModel]()),
+                      imageModels: imageModelsSubject.asDriver(onErrorJustReturn: [AssetModel]()),
+                      authrizedStatus: outputStatus)
     }
     
     func checkStatus() -> PublishSubject<PHAuthorizationStatus> {
@@ -57,15 +61,34 @@ class PickerViewModel: ViewModelType {
     
     func loadPhoto() {
         let fetchOption = PHFetchOptions()
-        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+        fetchOption.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         let smartAlbums = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
         smartAlbums.enumerateObjects {[weak self] (collection, index, stop) in
             if collection.estimatedAssetCount > 0 {
                 if collection.assetCollectionSubtype == .smartAlbumUserLibrary {
                     let result = PHAsset.fetchAssets(in: collection, options: fetchOption)
-                    let albumModel = AlbumModel(result: result, name: collection.localizedTitle ?? "", isCameraRoll: true, needFetchAssets: true)
-                    self?.modelsSubject.onNext(albumModel.models)
-                    self?.models = albumModel.models
+                    let albumModel = AlbumModel(result: result,
+                                                name: collection.localizedTitle ?? "",
+                                                isCameraRoll: true,
+                                                needFetchAssets: true,
+                                                loadCompletion: { (models) in
+                        
+                        var imageModels = [AssetModel]()
+                        var videoModels = [AssetModel]()
+                        for model in models {
+                            if model.type == .Video {
+                                videoModels.append(model)
+                            } else {
+                                imageModels.append(model)
+                            }
+                        }
+                        self?.videoModels = videoModels
+                        self?.imageModels = imageModels
+                        self?.videoModelsSubject.onNext(videoModels)
+                        self?.imageModelsSubject.onNext(imageModels)
+
+                    })
+
                 }
             }
         }
@@ -130,6 +153,9 @@ class PickerViewModel: ViewModelType {
             if model.type == .Video {
                 let option = PHVideoRequestOptions()
                 option.isNetworkAccessAllowed = true
+                option.progressHandler = { (progress, error, stop, info) in
+                    print(progress)
+                }
                 PHImageManager.default()
                     .requestAVAsset(forVideo: model.asset, options: option) { (result, audioMix, info) in
                     guard let asset = result else {
@@ -137,16 +163,15 @@ class PickerViewModel: ViewModelType {
                         return
                     }
                         
-                    asset.loadValuesAsynchronously(forKeys: [AVAssetDurationKey, AVAssetTracksKey, AVAssetCommonMetadataKey]) {[weak asset] in
-                        guard let weakAsset = asset else {return}
-                        assets[index] = weakAsset
+                        assets[index] = asset
                         count += 1
                         if count == models.count {
                             completion(assets)
                         }
-                    }
                         
+                    asset.loadValuesAsynchronously(forKeys: [AVAssetDurationKey, AVAssetTracksKey, AVAssetCommonMetadataKey]) {
 
+                    }
                 }
             } else {
                 let option = PHImageRequestOptions()
