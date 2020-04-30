@@ -86,7 +86,6 @@ class VideoItemCollectionViewCell: UICollectionViewCell {
                 layer.contentsGravity = .resizeAspectFill
                 strongSelf.layer.addSublayer(layer)
                 strongSelf.imageLayers.append(layer)
-                image.drawAsPattern(in: <#T##CGRect#>)
             }
         }
     }

@@ -136,11 +136,17 @@ class PickerViewModel: ViewModelType {
                         error(false)
                         return
                     }
-                    assets[index] = asset
-                    count += 1
-                    if count == models.count {
-                        completion(assets)
+                        
+                    asset.loadValuesAsynchronously(forKeys: [AVAssetDurationKey, AVAssetTracksKey, AVAssetCommonMetadataKey]) {[weak asset] in
+                        guard let weakAsset = asset else {return}
+                        assets[index] = weakAsset
+                        count += 1
+                        if count == models.count {
+                            completion(assets)
+                        }
                     }
+                        
+
                 }
             } else {
                 let option = PHImageRequestOptions()
