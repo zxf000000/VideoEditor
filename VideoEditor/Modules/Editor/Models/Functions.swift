@@ -21,7 +21,7 @@ let DefaultDuckingFadeInOutTime = CMTimeMake(value: 1, timescale: 2)    // .5 se
 let DefaultTransitionDuration = CMTimeMake(value: 1, timescale: 1)      // 1 second
 
 func GetWidthFor(timeRange: CMTimeRange, scaleFactor: CGFloat) -> CGFloat {
-    return CGFloat(CMTimeGetSeconds(timeRange.duration)) * TIMELINE_SINGLESECOND_WIDTH
+    return CGFloat(CMTimeGetSeconds(timeRange.duration)) * scaleFactor
 }
 
 func GetOrigin(for time: CMTime) -> CGPoint {

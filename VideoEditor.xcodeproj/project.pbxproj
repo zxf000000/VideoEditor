@@ -70,6 +70,7 @@
 		4E75011124596D6800DB3E44 /* PlayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75010C24596D6800DB3E44 /* PlayHeaderView.swift */; };
 		4E75011324596F6C00DB3E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E75011224596F6C00DB3E44 /* Main.storyboard */; };
 		52898E914823BFD95B69E411 /* libPods-VideoEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BD544310EE4E952178D3B6 /* libPods-VideoEditor.a */; };
+		B7B122F7245D2E6900EB3B2B /* TimelineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B122F6245D2E6900EB3B2B /* TimelineHeaderView.swift */; };
 		B7F0F0FA24586C75007EF9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F0F924586C75007EF9E9 /* AppDelegate.swift */; };
 		B7F0F0FE24586C75007EF9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F0FD24586C75007EF9E9 /* ViewController.swift */; };
 		B7F0F10324586C76007EF9E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7F0F10224586C76007EF9E9 /* Assets.xcassets */; };
@@ -179,6 +180,7 @@
 		851932765F5F7CBF760208D8 /* Pods-VideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditor.debug.xcconfig"; path = "Target Support Files/Pods-VideoEditor/Pods-VideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
 		B7B122F02459CECF00EB3B2B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B122F22459CFFB00EB3B2B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7B122F6245D2E6900EB3B2B /* TimelineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHeaderView.swift; sourceTree = "<group>"; };
 		B7F0F0F624586C75007EF9E9 /* VideoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7F0F0F924586C75007EF9E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7F0F0FD24586C75007EF9E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				4E75010A24596D6800DB3E44 /* PlaybackView.swift */,
 				4E75010B24596D6800DB3E44 /* ThumbnailsView.swift */,
 				4E75010C24596D6800DB3E44 /* PlayHeaderView.swift */,
+				B7B122F6245D2E6900EB3B2B /* TimelineHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				4E7500A724596D2200DB3E44 /* String+Add.swift in Sources */,
 				4E7500CA24596D5800DB3E44 /* TimeLineItemView.swift in Sources */,
 				4E7500AA24596D2200DB3E44 /* AVPlayerItem+Add.swift in Sources */,
+				B7B122F7245D2E6900EB3B2B /* TimelineHeaderView.swift in Sources */,
 				4E75009A2459569A00DB3E44 /* UIImage+Add.swift in Sources */,
 				4E75010E24596D6800DB3E44 /* TransitionButton.swift in Sources */,
 				4E75010324596D6000DB3E44 /* Notifications.swift in Sources */,
@@ -1128,7 +1132,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2TXM8X56D3;
+				DEVELOPMENT_TEAM = S69977D795;
 				INFOPLIST_FILE = VideoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1149,7 +1153,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2TXM8X56D3;
+				DEVELOPMENT_TEAM = S69977D795;
 				INFOPLIST_FILE = VideoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

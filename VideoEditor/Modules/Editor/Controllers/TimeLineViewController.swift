@@ -48,6 +48,8 @@ class TimeLineViewController: UIViewController {
         registNotifications()
         
         timelineDataSource = TimelineDataSource(viewController: self)
+        collectionView.register(TimelineHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "TimelineHeaderView")
+
         collectionView.delegate = timelineDataSource
         collectionView.dataSource = timelineDataSource
         

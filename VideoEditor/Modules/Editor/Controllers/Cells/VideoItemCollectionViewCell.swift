@@ -19,7 +19,7 @@ class VideoItemCollectionViewCell: UICollectionViewCell {
     var images: [UIImage] = [UIImage]()
     
     var imageLayers: [CALayer] = [CALayer]()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()

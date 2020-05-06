@@ -16,6 +16,11 @@ protocol UICollectionViewDelegateTimelineLayout: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didAdjustTo position: CGPoint, forItemAt indexPath: IndexPath)
     func collectionView(collectionView: UICollectionView, widthForItemAt indexPath: IndexPath) -> CGFloat
     func collectionView(collectionView: UICollectionView, positionForItemAt indexPath: IndexPath) -> CGPoint
+    
+    func collectionView(collectionView: UICollectionView, changingScaleTo scale: CGFloat)
+    func collectionView(collectionView: UICollectionView, endScaleTo scale: CGFloat)
+    
+    func currentScaleForCollectionView(collectionView: UICollectionView) -> CGFloat
 }
 
 enum PanDirection {
@@ -61,6 +66,11 @@ class TimelineLayout: UICollectionViewLayout {
         }
     }
     
+    private var currentScale: CGFloat {
+        get {
+            (self.collectionView?.delegate as! UICollectionViewDelegateTimelineLayout).currentScaleForCollectionView(collectionView: collectionView!)
+        }
+    }
     
     private var contentSize: CGSize?
     private var caculateLayout: [IndexPath: UICollectionViewLayoutAttributes]?
@@ -74,6 +84,7 @@ class TimelineLayout: UICollectionViewLayout {
     private  var panGestureRecognize: UIPanGestureRecognizer?
     private  var longPressGestureRecognize: UILongPressGestureRecognizer?
     private  var tapGestureRecognize: UITapGestureRecognizer?
+    private var pinchGestureRecognizer: UIPinchGestureRecognizer?
     
     private var selectedIndexPath: IndexPath?
     private var dragableImageView: UIImageView?
@@ -84,7 +95,7 @@ class TimelineLayout: UICollectionViewLayout {
     private var trimming: Bool?
     
     private var timelineLayers = [CAShapeLayer]()
-    
+        
     override init() {
         super.init()
         setup()
@@ -103,6 +114,7 @@ class TimelineLayout: UICollectionViewLayout {
     }
     
     override func prepare() {
+        
         var layoutDic = Dictionary<IndexPath,UICollectionViewLayoutAttributes>()
         var xPos = trackInsets?.left
         var yPos: CGFloat = 0
@@ -112,7 +124,7 @@ class TimelineLayout: UICollectionViewLayout {
         let trackCount = collectionView?.numberOfSections
         for track in 0..<trackCount! {
             let itemCount = collectionView?.numberOfItems(inSection: track)
-            
+                        
             for item in 0..<itemCount! {
                 let indexPath = IndexPath(item: item, section: track)
                 let attributes = TimelineLayoutAttribute(forCellWith: indexPath)
@@ -146,30 +158,8 @@ class TimelineLayout: UICollectionViewLayout {
         }
         self.contentSize = CGSize(width: maxTrackWidth + (trackInsets?.right)!, height: CGFloat(trackCount!) * self.trackHeight!);
         caculateLayout = layoutDic
-        
-        // 绘制时间轴
-        drawTimelineLayers()
-        
+
     }
-    
-    func drawTimelineLayers() {
-        for layer in timelineLayers {
-            layer.removeFromSuperlayer()
-        }
-        timelineLayers.removeAll()
-        let mainLayer = CAShapeLayer()
-        mainLayer.lineWidth = 2
-        mainLayer.strokeColor = UIColor.white.cgColor
-        collectionView?.layer.addSublayer(mainLayer)
-        
-        let mainPath = UIBezierPath()
-        mainPath.move(to: CGPoint(x: trackInsets?.left ?? 0, y: 20))
-        mainPath.addLine(to: CGPoint(x: (contentSize?.width)! - (trackInsets?.right)! , y: 20))
-        mainLayer.path = mainPath.cgPath
-        
-        
-    }
-    
     override var collectionViewContentSize: CGSize {
         get {
             self.contentSize!
@@ -183,11 +173,27 @@ class TimelineLayout: UICollectionViewLayout {
                 allAttribute.append(element)
             }
         })
+        if let header = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: IndexPath(item: 0, section: 0)) {
+            allAttribute.append(header)
+        }
         return allAttribute
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return caculateLayout?[indexPath]
+    }
+    
+    override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        var attribute: UICollectionViewLayoutAttributes?
+        if super.layoutAttributesForSupplementaryView(ofKind: elementKind, at: indexPath) == nil {
+            attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: elementKind, with: indexPath)
+        }
+        let x = (trackInsets?.left)!
+        let y = CGFloat(0)
+        let width = (contentSize?.width)! - (trackInsets?.left)! - (trackInsets?.right)!
+        let height = (trackInsets?.top)!
+        attribute?.frame = CGRect(x: x, y: y, width: width, height: height)
+        return attribute
     }
     
     required init?(coder: NSCoder) {
@@ -204,6 +210,8 @@ class TimelineLayout: UICollectionViewLayout {
         tapGestureRecognize = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
         tapGestureRecognize?.numberOfTapsRequired = 2
         
+        pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
+        
         collectionView?.gestureRecognizers?.forEach({ (ges) in
             if ges.isKind(of: UIPanGestureRecognizer.self) {
                 ges.require(toFail: panGestureRecognize!)
@@ -215,15 +223,31 @@ class TimelineLayout: UICollectionViewLayout {
         panGestureRecognize?.delegate = self
         longPressGestureRecognize?.delegate = self
         tapGestureRecognize?.delegate = self
+        pinchGestureRecognizer?.delegate = self
         
+        collectionView?.addGestureRecognizer(pinchGestureRecognizer!)
         collectionView?.addGestureRecognizer(panGestureRecognize!)
         collectionView?.addGestureRecognizer(tapGestureRecognize!)
         collectionView?.addGestureRecognizer(longPressGestureRecognize!)
         
         panGestureRecognize?.isEnabled = false
-        
-        
+
     }
+    
+    @objc
+    func handlePinch(_ pinch: UIPinchGestureRecognizer) {
+        if pinch.state == .began {
+            collectionView?.isScrollEnabled = false
+        } else if pinch.state == .changed {
+            let scale = pinch.scale
+            (self.collectionView?.delegate as! UICollectionViewDelegateTimelineLayout).collectionView(collectionView: collectionView!, changingScaleTo: scale)
+        } else {
+            collectionView?.isScrollEnabled = true
+            let scale = pinch.scale
+            (self.collectionView?.delegate as! UICollectionViewDelegateTimelineLayout).collectionView(collectionView: collectionView!, endScaleTo: scale)
+        }
+    }
+    
     
     
     @objc
@@ -377,7 +401,10 @@ class TimelineLayout: UICollectionViewLayout {
 class TimelineLayoutAttribute: UICollectionViewLayoutAttributes {
     var maxFrameWidth: CGFloat?
     var scaleUnit: CGFloat?
+    
 }
+
+
 
 extension TimelineLayout: UIGestureRecognizerDelegate {
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

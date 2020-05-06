@@ -21,6 +21,7 @@ class TimelineDataSource:NSObject, UICollectionViewDataSource {
     var timelineViewController: TimeLineViewController!
     var transitionPopoverController: UIPopoverController!
     
+    weak var headerView: TimelineHeaderView!
     
     init(viewController: TimeLineViewController) {
         super.init()
@@ -124,6 +125,27 @@ class TimelineDataSource:NSObject, UICollectionViewDataSource {
         }
         return ""
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TimelineHeaderView", for: indexPath) as! TimelineHeaderView
+            var duration = CMTime.zero
+            for item in (timelineItems?[0])! {
+                if let media = item as? TimelineItemViewModel {
+                    duration = CMTimeAdd(duration, media.timelineItem?.timeRange?.duration ?? .zero)
+                }
+            }
+            header.totalDuration = duration
+            header.setup()
+            
+            headerView = header
+            
+            return header
+        }
+        return UICollectionReusableView()
+    }
+    
+
  
 }
 
@@ -204,6 +226,35 @@ extension TimelineDataSource: UICollectionViewDelegateTimelineLayout {
     func collectionView(theCollectionView: UICollectionView, layout: UICollectionViewLayout, itemAtIndexPath: IndexPath, shouldMove toIndexPath: IndexPath) -> Bool {
         return itemAtIndexPath.section == toIndexPath.section
     }
+    
+    // MARK: 正在双指缩放
+    func collectionView(collectionView: UICollectionView, changingScaleTo scale: CGFloat) {
+        var result = scale
+        for models in timelineItems! {
+            for viewModel in models {
+                guard let item = viewModel as? TimelineItemViewModel else {continue}
+                let lastScale = (item.timelineItem?.lastScale)!
+                item.timelineItem?.scale = lastScale  + (scale - 1) * 0.7
+                result = item.timelineItem?.scale ?? 1
+            }
+        }
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    // MARK: 缩放结束
+    func collectionView(collectionView: UICollectionView, endScaleTo scale: CGFloat) {
+        for models in timelineItems! {
+            for viewModel in models {
+                guard let item = viewModel as? TimelineItemViewModel else {continue}
+                item.timelineItem?.lastScale = (item.timelineItem?.scale)!
+            }
+        }
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    func currentScaleForCollectionView(collectionView: UICollectionView) -> CGFloat {
+        (timelineItems?.first as? [TimeLineItem])?.first?.scale ?? 1
+    }
+
 }
 
 extension TimelineDataSource: TransitionViewControllerDelegate {
