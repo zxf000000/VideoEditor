@@ -136,8 +136,7 @@ class TimelineDataSource:NSObject, UICollectionViewDataSource {
                 }
             }
             header.totalDuration = duration
-            header.setup()
-            
+            header.setNeedsDisplay()
             headerView = header
             
             return header
@@ -229,15 +228,14 @@ extension TimelineDataSource: UICollectionViewDelegateTimelineLayout {
     
     // MARK: 正在双指缩放
     func collectionView(collectionView: UICollectionView, changingScaleTo scale: CGFloat) {
-        var result = scale
         for models in timelineItems! {
             for viewModel in models {
                 guard let item = viewModel as? TimelineItemViewModel else {continue}
                 let lastScale = (item.timelineItem?.lastScale)!
                 item.timelineItem?.scale = lastScale  + (scale - 1) * 0.7
-                result = item.timelineItem?.scale ?? 1
             }
         }
+        headerView.setNeedsDisplay()
         collectionView.collectionViewLayout.invalidateLayout()
     }
     // MARK: 缩放结束
