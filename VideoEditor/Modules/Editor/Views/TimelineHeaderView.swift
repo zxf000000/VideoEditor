@@ -58,6 +58,8 @@ class TimelineHeaderView: UICollectionReusableView {
                                              NSAttributedString.Key.foregroundColor: UIColor.white])
             centerX += widthPerSecond
         }
+
+        
     }
 
 }

@@ -13,6 +13,8 @@ class TimeLineItem {
     var timeRange: CMTimeRange?
     var startTimeInTimeLine: CMTime?
     
+    var didSetLastScale: (() -> Void)?
+    
     private var _scale: CGFloat = 1.0
     
     // 缩放系数
@@ -28,7 +30,11 @@ class TimeLineItem {
             return _scale
         }
     }
-    var lastScale: CGFloat = 1.0
+    var lastScale: CGFloat = 1.0 {
+        didSet {
+            didSetLastScale?()
+        }
+    }
     
     init() {
         timeRange = .invalid

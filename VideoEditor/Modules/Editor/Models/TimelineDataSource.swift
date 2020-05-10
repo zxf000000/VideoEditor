@@ -232,7 +232,7 @@ extension TimelineDataSource: UICollectionViewDelegateTimelineLayout {
             for viewModel in models {
                 guard let item = viewModel as? TimelineItemViewModel else {continue}
                 let lastScale = (item.timelineItem?.lastScale)!
-                item.timelineItem?.scale = lastScale  + (scale - 1) * 0.7
+                item.timelineItem?.scale = lastScale  + (scale - 1)
             }
         }
         headerView.setNeedsDisplay()
