@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -70,6 +70,9 @@
 		4E75011124596D6800DB3E44 /* PlayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75010C24596D6800DB3E44 /* PlayHeaderView.swift */; };
 		4E75011324596F6C00DB3E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E75011224596F6C00DB3E44 /* Main.storyboard */; };
 		52898E914823BFD95B69E411 /* libPods-VideoEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BD544310EE4E952178D3B6 /* libPods-VideoEditor.a */; };
+		B701B509246D96790019A7F4 /* PinchGestureHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701B508246D96790019A7F4 /* PinchGestureHandlerImpl.swift */; };
+		B701B50A246F024C0019A7F4 /* GestureRecognizerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B701B506246D95D50019A7F4 /* GestureRecognizerHandler.swift */; };
+		B7070E1A2482B71C006C67A2 /* ATimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7070E192482B71C006C67A2 /* ATimeLineViewController.swift */; };
 		B7B122F7245D2E6900EB3B2B /* TimelineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B122F6245D2E6900EB3B2B /* TimelineHeaderView.swift */; };
 		B7F0F0FA24586C75007EF9E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F0F924586C75007EF9E9 /* AppDelegate.swift */; };
 		B7F0F0FE24586C75007EF9E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F0F0FD24586C75007EF9E9 /* ViewController.swift */; };
@@ -178,6 +181,9 @@
 		4E75011224596F6C00DB3E44 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		80924FDC5B8C610FB32BC571 /* libPods-VideoEditorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VideoEditorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		851932765F5F7CBF760208D8 /* Pods-VideoEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoEditor.debug.xcconfig"; path = "Target Support Files/Pods-VideoEditor/Pods-VideoEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		B701B506246D95D50019A7F4 /* GestureRecognizerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureRecognizerHandler.swift; sourceTree = "<group>"; };
+		B701B508246D96790019A7F4 /* PinchGestureHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchGestureHandlerImpl.swift; sourceTree = "<group>"; };
+		B7070E192482B71C006C67A2 /* ATimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATimeLineViewController.swift; sourceTree = "<group>"; };
 		B7B122F02459CECF00EB3B2B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B122F22459CFFB00EB3B2B /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B122F6245D2E6900EB3B2B /* TimelineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineHeaderView.swift; sourceTree = "<group>"; };
@@ -265,6 +271,7 @@
 		4E7500AC24596D4800DB3E44 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				B701B505246D95B60019A7F4 /* Interface */,
 				4E4184E8245A72C10046A2D2 /* Others */,
 				4E75010724596D6800DB3E44 /* Views */,
 				4E7500D424596D6000DB3E44 /* Models */,
@@ -285,6 +292,7 @@
 				4E7500BE24596D5800DB3E44 /* Layouts */,
 				4E7500C024596D5800DB3E44 /* CompositionExporter.swift */,
 				4E7500C124596D5800DB3E44 /* TransitionViewController.swift */,
+				B7070E192482B71C006C67A2 /* ATimeLineViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +406,15 @@
 				80924FDC5B8C610FB32BC571 /* libPods-VideoEditorTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B701B505246D95B60019A7F4 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B701B506246D95D50019A7F4 /* GestureRecognizerHandler.swift */,
+				B701B508246D96790019A7F4 /* PinchGestureHandlerImpl.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		B7F0F0ED24586C75007EF9E9 = {
@@ -678,6 +695,7 @@
 				B7F0F0F224586C75007EF9E9 /* Sources */,
 				B7F0F0F324586C75007EF9E9 /* Frameworks */,
 				B7F0F0F424586C75007EF9E9 /* Resources */,
+				C6BA86733B10920DE4327E70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -715,6 +733,7 @@
 				B7F0F11324586C76007EF9E9 /* Sources */,
 				B7F0F11424586C76007EF9E9 /* Frameworks */,
 				B7F0F11524586C76007EF9E9 /* Resources */,
+				F205E3556B5EDBA969192518 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -843,6 +862,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
+		C6BA86733B10920DE4327E70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor/Pods-VideoEditor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor/Pods-VideoEditor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoEditor/Pods-VideoEditor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D648DAC0F5F0915715EA5FC1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -887,6 +923,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F205E3556B5EDBA969192518 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoEditor-VideoEditorUITests/Pods-VideoEditor-VideoEditorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -895,6 +948,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7F0F15B24587D30007EF9E9 /* PickerVIewController.swift in Sources */,
+				B701B50A246F024C0019A7F4 /* GestureRecognizerHandler.swift in Sources */,
 				4E750098245954BE00DB3E44 /* HUDManager.swift in Sources */,
 				4E7500FC24596D6000DB3E44 /* VideoTransition.swift in Sources */,
 				4E7500C424596D5800DB3E44 /* VideoItemCollectionViewCell.swift in Sources */,
@@ -952,6 +1006,8 @@
 				4E7500CC24596D5800DB3E44 /* PlayerViewController.swift in Sources */,
 				4E7500C624596D5800DB3E44 /* VideoItemTableViewCell.swift in Sources */,
 				4E7500F024596D6000DB3E44 /* CompositionLayer.swift in Sources */,
+				B701B509246D96790019A7F4 /* PinchGestureHandlerImpl.swift in Sources */,
+				B7070E1A2482B71C006C67A2 /* ATimeLineViewController.swift in Sources */,
 				4E7500CB24596D5800DB3E44 /* VolumeAtomationView.swift in Sources */,
 				4E7500A724596D2200DB3E44 /* String+Add.swift in Sources */,
 				4E7500CA24596D5800DB3E44 /* TimeLineItemView.swift in Sources */,

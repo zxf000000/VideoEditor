@@ -11,6 +11,7 @@ target 'VideoEditor' do
   pod 'SnapKit'
   pod 'R.swift'
   pod 'MBProgressHUD'
+  pod 'Reveal-SDK', :configurations => ['Debug']
   # Pods for VideoEditor
 
   target 'VideoEditorTests' do
